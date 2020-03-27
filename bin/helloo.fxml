@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="735.0" maxWidth="1300.0" minHeight="628.0" minWidth="1300.0" prefHeight="719.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#newGoals" text="change daily goals" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="54.0" prefWidth="958.0">
+         <children>
+            <ToggleButton layoutX="668.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#staticsScene" prefHeight="60.0" prefWidth="654.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Statics" textFill="#5db57d" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="650.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold Italic" size="28.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton layoutX="118.0" layoutY="-2.0" mnemonicParsing="false" onMouseClicked="#addmealScene" prefHeight="60.0" prefWidth="659.0" style="-fx-background-color: #75D198; -fx-cursor: hand;" text="Home" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="650.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold Italic" size="28.0" />
+               </font>
+            </ToggleButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="14.0" prefWidth="1309.0" style="-fx-background-color: #75D198;">
+         <children>
+            <DatePicker fx:id="date" layoutX="563.0" layoutY="11.0" onHidden="#changeDate" prefHeight="25.0" prefWidth="236.0" style="-fx-cursor: hand;" AnchorPane.bottomAnchor="9.0" AnchorPane.topAnchor="11.0" />
+         </children>
+      </AnchorPane>
+      <VBox maxWidth="1313.0" prefHeight="628.0" prefWidth="1290.0">
+         <children>
+            <AnchorPane maxHeight="-1.0" maxWidth="1330.0" minWidth="1290.0" prefHeight="500.0" prefWidth="1330.0" style="-fx-background-color: white;">
+               <children>
+                  <Pane layoutX="32.0" layoutY="55.0" prefHeight="468.0" prefWidth="620.0" style="-fx-border-color: #75D198; -fx-border-width: 3; -fx-border-radius: 20; -fx-background-radius: 20;" AnchorPane.bottomAnchor="-20.0" AnchorPane.topAnchor="50.0">
+                     <padding>
+                        <Insets bottom="-20.0" />
+                     </padding>
+                  </Pane>
+                  <TextField fx:id="text" layoutX="56.0" layoutY="68.0" onKeyReleased="#show" prefHeight="27.0" prefWidth="576.0" promptText="What did you eat ?" style="-fx-cursor: text; -fx-background-color: transparent; -fx-border-color: #75D198;" />
+                  <Button fx:id="addButton" layoutX="293.0" layoutY="443.0" maxHeight="58.0" minHeight="50.0" minWidth="20.0" mnemonicParsing="false" onAction="#add" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="58.0" prefWidth="130.0" style="-fx-border-color: #75D198; -fx-border-radius: 50; -fx-border-width: 3; -fx-background-color: transparent; -fx-cursor: hand;" text="Add " textAlignment="CENTER" textFill="#53b577" wrapText="true" AnchorPane.bottomAnchor="10.0">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="searchTable" layoutX="57.0" layoutY="128.0" prefHeight="245.0" prefWidth="576.0" style="-fx-background-color: transparent;">
+                     <columns>
+                        <TableColumn fx:id="name" prefWidth="257.3333435058594" text="Name" />
+                        <TableColumn fx:id="portion" editable="false" minWidth="0.0" prefWidth="48.0" resizable="false" text="Portion" />
+                        <TableColumn fx:id="unit" minWidth="0.0" prefWidth="29.0" resizable="false" text="Unit" />
+                        <TableColumn fx:id="cal" prefWidth="51.333343505859375" resizable="false" text="Calories" />
+                        <TableColumn fx:id="fat" minWidth="0.0" prefWidth="27.666656494140625" resizable="false" text="Fat" />
+                        <TableColumn fx:id="carbo" minWidth="3.333343505859375" prefWidth="88.33331298828125" resizable="false" text="Carbohydrates" />
+                        <TableColumn fx:id="protein" minWidth="0.0" prefWidth="50.66668701171875" resizable="false" text="Protein" />
+                     </columns>
+                  </TableView>
+                  <FlowPane layoutX="726.0" layoutY="85.0" prefHeight="381.0" prefWidth="549.0">
+                     <children>
+                        <HBox prefHeight="108.0" prefWidth="549.0">
+                           <children>
+                              <VBox fx:id="breakfast" minHeight="360.0" minWidth="170.0" prefHeight="350.0" prefWidth="147.0">
+                                 <children>
+                                    <Label alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" prefHeight="233.0" prefWidth="149.0" text="Breakfast" textAlignment="CENTER" textOverrun="CLIP">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="breakfastList" minWidth="170.0" prefHeight="558.0" prefWidth="170.0" style="-fx-background-color: transparent;">
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                    </ListView>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="81.0" prefWidth="25.0">
+                                 <padding>
+                                    <Insets left="8.0" right="5.0" />
+                                 </padding>
+                              </Separator>
+                              <VBox fx:id="launch" minWidth="170.0" prefHeight="259.0" prefWidth="176.0">
+                                 <children>
+                                    <Label alignment="TOP_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="28.0" prefWidth="190.0" text="Launch" textAlignment="CENTER" textOverrun="CLIP">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="LunchList" prefHeight="301.0" prefWidth="170.0" style="-fx-background-color: transparent;" />
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="215.0" prefWidth="2.0">
+                                 <padding>
+                                    <Insets left="8.0" right="5.0" />
+                                 </padding>
+                              </Separator>
+                              <VBox fx:id="dinner" minWidth="170.0" prefHeight="259.0" prefWidth="183.0">
+                                 <children>
+                                    <Label alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" minWidth="170.0" prefHeight="28.0" prefWidth="206.0" text="Dinner" textOverrun="CLIP">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="dinnerList" minWidth="170.0" prefHeight="339.0" prefWidth="130.0" style="-fx-background-color: transparent;">
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                    </ListView>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                     </children>
+                  </FlowPane>
+                  <Label layoutX="842.0" layoutY="-1.0" prefHeight="54.0" prefWidth="301.0" style="-fx-cursor: crosshair;" text="Daily Summary" textAlignment="CENTER" textFill="#60b980" textOverrun="WORD_ELLIPSIS" wrapText="true" AnchorPane.topAnchor="-1.0">
+                     <font>
+                        <Font name="Cooper Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <ToggleButton fx:id="dinnerButton" layoutX="418.0" layoutY="387.0" mnemonicParsing="false" onAction="#selectedButton" prefHeight="25.0" prefWidth="65.0" text="Dinner">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="LaunchButton" layoutX="330.0" layoutY="387.0" mnemonicParsing="false" onAction="#selectedButton" prefHeight="25.0" prefWidth="65.0" text="Lunch">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="BreakfastButton" layoutX="243.0" layoutY="387.0" mnemonicParsing="false" onAction="#selectedButton" selected="true" text="Breakfast" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ToggleButton>
+                  <CheckBox fx:id="beveargesFilter" layoutX="227.0" layoutY="101.0" mnemonicParsing="false" onAction="#show" selected="true" text="Beverages" />
+                  <CheckBox fx:id="foodFilter" layoutX="326.0" layoutY="101.0" mnemonicParsing="false" onAction="#show" selected="true" text="Food" />
+                  <Label layoutX="234.0" layoutY="-1.0" prefHeight="54.0" prefWidth="301.0" style="-fx-cursor: crosshair;" text="Add Meal" textAlignment="CENTER" textFill="#60b980" textOverrun="WORD_ELLIPSIS" wrapText="true" AnchorPane.topAnchor="-1.0">
+                     <font>
+                        <Font name="Cooper Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="671.0" layoutY="56.0" prefHeight="488.0" prefWidth="620.0" style="-fx-border-color: #75D198; -fx-border-width: 3; -fx-border-radius: 20;" AnchorPane.bottomAnchor="-40.0" AnchorPane.leftAnchor="671.0" AnchorPane.topAnchor="50.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+            <AnchorPane maxHeight="130.0" maxWidth="1329.0" minWidth="1280.0" prefHeight="119.0" prefWidth="1329.0" style="-fx-background-color: #75D198;">
+               <children>
+                  <Label layoutX="1120.0" layoutY="-27.0" prefHeight="115.0" prefWidth="168.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="  Calories " textFill="#75d198" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Cooper Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="-15.0" prefHeight="110.0" prefWidth="168.0" style="-fx-border-radius: 20; -fx-border-width: 5; -fx-border-color: white; -fx-background-color: white; -fx-background-radius: 20;" text="  Daily    Goals  " textAlignment="CENTER" textFill="#75d198" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Cooper Black" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="730.0" layoutY="56.0" prefHeight="34.0" prefWidth="308.0" style="-fx-cursor: crosshair; -fx-border-color: white; -fx-border-width: 3; -fx-border-radius: 20;" text="  Protein " textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Cooper Black" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="303.0" layoutY="57.0" prefHeight="34.0" prefWidth="308.0" style="-fx-border-color: white; -fx-border-width: 3; -fx-border-radius: 20;" text="  Carbos. " textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Cooper Black" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="729.0" layoutY="10.0" prefHeight="34.0" prefWidth="308.0" style="-fx-cursor: crosshair; -fx-border-color: white; -fx-border-radius: 20; -fx-border-width: 3;" text="  Fat " textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Cooper Black" size="27.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="fatBar" layoutX="870.0" layoutY="20.0" prefHeight="18.0" prefWidth="139.0" progress="0.0" />
+                  <ProgressBar fx:id="proteinBar" layoutX="869.0" layoutY="65.0" prefHeight="18.0" prefWidth="139.0" progress="0.0" />
+                  <ProgressBar fx:id="beverBar" layoutX="454.0" layoutY="21.0" prefHeight="18.0" prefWidth="139.0" progress="0.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" />
+                  <ProgressBar fx:id="carboBar" layoutX="449.0" layoutY="65.0" prefHeight="18.0" prefWidth="139.0" progress="0.0" />
+                  <ProgressBar fx:id="calBar" layoutX="1136.0" layoutY="52.0" prefHeight="25.0" prefWidth="130.0" progress="1.0" style="-fx-background-color: white;" />
+                  <Label layoutX="301.0" layoutY="12.0" prefHeight="34.0" prefWidth="308.0" style="-fx-border-color: white; -fx-border-radius: 20; -fx-border-width: 3;" text="   Beverages " textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font name="Cooper Black" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+  </children>
+</VBox>

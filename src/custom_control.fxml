@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox minWidth="1300.0" prefHeight="729.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+      <AnchorPane maxWidth="1300.0" prefHeight="60.0" prefWidth="1300.0">
+         <children>
+            <ToggleButton layoutX="550.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#staticsScene" prefHeight="60.0" prefWidth="550.0" style="-fx-background-color: #75D198; -fx-cursor: hand;" text="Statics" textAlignment="RIGHT" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="650.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold Italic" size="28.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton mnemonicParsing="false" onMouseClicked="#addmealScene" prefHeight="60.0" prefWidth="550.0" style="-fx-background-color: white; -fx-cursor: hand;" text="Add meal" textFill="#66bc85" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="650.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="System Bold Italic" size="28.0" />
+               </font>
+            </ToggleButton>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </AnchorPane>
+      <AnchorPane maxWidth="1300.0" prefHeight="40.0" prefWidth="1300.0" style="-fx-background-color: #75D198;">
+         <children>
+            <DatePicker fx:id="date" layoutX="563.0" layoutY="11.0" prefHeight="25.0" prefWidth="236.0" style="-fx-cursor: hand;" AnchorPane.bottomAnchor="9.0" AnchorPane.topAnchor="11.0" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </AnchorPane>
+      <ScrollPane hbarPolicy="NEVER" maxWidth="1300.0" prefHeight="578.0" prefWidth="1300.0" vbarPolicy="NEVER">
+         <content>
+          <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="422.0" prefWidth="1280.0" style="-fx-background-color: white;">
+            <children>
+                  <VBox prefHeight="600.0" prefWidth="1082.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0">
+                     <children>
+                        <AnchorPane prefHeight="576.0" prefWidth="1270.0">
+                           <children>
+                              <Label layoutX="1071.0" layoutY="394.0" onMouseEntered="#showChart" onMouseExited="#showInitial" prefHeight="54.0" prefWidth="246.0" style="-fx-background-color: #5B8EC8; -fx-background-radius: 20;" text="  Beverages" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                 <font>
+                                    <Font size="35.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                              <Label layoutX="1072.0" layoutY="129.0" onMouseEntered="#showChart" onMouseExited="#showInitial" prefHeight="54.0" prefWidth="343.0" style="-fx-background-color: #75D198; -fx-background-radius: 20;" text="   Protein" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true" AnchorPane.topAnchor="129.0">
+                                 <font>
+                                    <Font name="Lucida Bright Regular" size="32.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                              <Label contentDisplay="TOP" layoutX="1073.0" layoutY="328.0" maxHeight="60.0" onMouseEntered="#showChart" onMouseExited="#showInitial" prefHeight="54.0" prefWidth="256.0" style="-fx-background-color: #C3B74B; -fx-background-radius: 20;" text="  Fat" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="196.0" AnchorPane.topAnchor="328.0">
+                                 <font>
+                                    <Font name="Lucida Bright Regular" size="32.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                              <Pane fx:id="chartsPane" layoutX="28.0" prefHeight="578.0" prefWidth="1000.0" />
+                              <Label layoutX="1075.0" layoutY="263.0" onMouseEntered="#showChart" onMouseExited="#showInitial" prefHeight="52.0" prefWidth="260.0" style="-fx-background-color: #B46C3C; -fx-background-radius: 20;" text="   Calories" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                              <Label layoutX="1073.0" layoutY="198.0" onMouseEntered="#showChart" onMouseExited="#showInitial" prefHeight="52.0" prefWidth="309.0" style="-fx-background-color: #3679A1; -fx-background-radius: 20;" text="   Carbos." textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true" AnchorPane.topAnchor="198.0">
+                                 <font>
+                                    <Font name="Lucida Bright Regular" size="32.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+                  
+                  
+            </children>
+          </AnchorPane>
+         </content>
+         <VBox.margin>
+            <Insets right="-10.0" />
+         </VBox.margin>
+      </ScrollPane>
+      <AnchorPane maxWidth="1300.0" prefHeight="47.0" prefWidth="1300.0" style="-fx-background-color: #75D198;">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin></AnchorPane>
+  </children>
+</VBox>
